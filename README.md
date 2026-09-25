@@ -1,10 +1,10 @@
-# Railway Ticket Booking & Management System
+# Railway Ticket Booking & Management System is
 
 A Python terminal-based program designed to book tickets, search passenger data, calculate ticket analytics, display styled Indian Railways e-tickets, and process ticket cancellations.
 
 ---
 
-## Features
+## Features are
 
 - **Passenger Booking:** Registers passenger details including PNR ID, Name, Sex, Compartment/Class, Source, Destination, and Fare.
 - **Passenger Search:** Finds and displays passenger details using their PNR / Passenger ID.
@@ -17,7 +17,7 @@ A Python terminal-based program designed to book tickets, search passenger data,
 
 ---
 
-## Requirements
+## Requirements are:=
 
 - **Python 3.x** (Uses built-in Python libraries; no external dependencies required).
 
@@ -57,15 +57,15 @@ Sums up ticket fares for all active records and prints the overall average fare.
 Renders styled, bordered Indian Railways E-Tickets in the terminal for every booked passenger.
 
 ### 6. `cancelticket(z)`
-Removes a record matching PNR/Passenger ID `z` from `main` and re-prints remaining valid tickets.
+Removes a is  record matching PNR id /Passenger ID `z` from `main` and re-prints remaining valid tickets.
 
 ---
 
-## How to Run
+## How to Run the code
 
 1. Copy the Python script into a file named `railway_booking.py`.
 2. Open terminal/command prompt in the directory containing the file.
 3. Run the application:
 
-```bash
+```bash'''
 python railway_booking.py
