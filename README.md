@@ -1,71 +1,59 @@
-# Railway Ticket Booking & Management System is
+Railway Reservation System:-
+A Python CLI application designed to manage train passenger bookings, calculate compartment fares, generate formatted e-tickets, and perform search, analysis, and ticket cancellation operations.
 
-A Python terminal-based program designed to book tickets, search passenger data, calculate ticket analytics, display styled Indian Railways e-tickets, and process ticket cancellations.
+Features:-
+Passenger Booking: Enter passenger details including PNR ID, Name, Sex/Gender, Compartment Class, Source, and Destination.
+Dynamic Fare Calculation: Automatically determines ticket pricing based on selected class/compartment.
+Search Capabilities:Search passenger records by Passenger ID (PNR).Identify the passenger who paid the highest ticket fare.
+Fare Analytics: Compute and display the average fare across all registered passengers.
+E-Ticket Generation: Render ASCII formatted Indian Railways e-tickets directly to the terminal.
+Ticket Management:Add additional passenger entries iteratively.Cancel existing tickets by Passenger ID with automatic refreshed ticket generation.
 
----
+Compartment Pricing Chart
+Compartment Class        Fare (₹)
+general                  ₹2,500
+AC 1 TIER                ₹3,200
+AC 2 TIER                ₹3,500
+AC 3 TIER                ₹3,700
 
-## Features are
+Getting Started
+Prerequisites
+      Python 3.x installed on your system.
+Running the Application
+Save the code into a Python file (e.g., railway_reservation.py).
+Open your terminal or command prompt.
+Run the script:     python railway_reservation.py
 
-- **Passenger Booking:** Registers passenger details including PNR ID, Name, Sex, Compartment/Class, Source, Destination, and Fare.
-- **Passenger Search:** Finds and displays passenger details using their PNR / Passenger ID.
-- **Fare Analytics:**
-  - **Highest Fare Finder:** Identifies the passenger who paid the maximum fare amount.
-  - **Average Fare Calculator:** Computes the average fare price across all booked tickets.
-- **E-Ticket Generation:** Prints formatted e-tickets aligned within customized borders for terminal viewing.
-- **Ticket Cancellation:** Cancels booked tickets by Passenger ID and updates active e-tickets in real time.
-- **Interactive Data Entry:** Prompts users to dynamically add extra passenger entries prior to printing tickets.
 
----
+Usage Walkthrough:-
+Initial Entry: Enter the initial number of passengers to register.
+Passenger Input: Provide PNR ID, name, gender, class (general, AC 1 TIER, AC 2 TIER, or AC 3 TIER), source station, and destination.
+Search & Analytics:
+                  Confirm with Y when prompted to search for specific passenger details using PNR                         ID.Confirm with Y to retrieve highest-paid passenger details.Confirm with Y to view                     average fare calculations.
+Append Bookings: Enter Y to iteratively add single passenger bookings.
+Print E-Tickets: Enter Y to generate formatted e-tickets.
+Ticket Cancellation: Enter Y followed by the Passenger PNR ID to remove a record and update ticket printouts.
 
-## Requirements are:=
 
-- **Python 3.x** (Uses built-in Python libraries; no external dependencies required).
+Data Structure:-
+Passenger records are dynamically managed in a 2D Python list (main), structured as follows:
+[PNR_ID, Name, Sex, Compartment, Source, Destination, Fare]
 
----
 
-## Data Schema (`main` List Structure)
-
-Passenger records are stored as nested lists within a central `main` list structured as follows:
-
-| Index | Field | Description |
-| :--- | :--- | :--- |
-| `[0]` | `pnr` | Passenger ID / PNR Number |
-| `[1]` | `name` | Passenger Full Name |
-| `[2]` | `sex` | Sex / Gender / Age details |
-| `[3]` | `com` | Compartment (`general`, `AC 1 TIER`, `AC 2 TIER`, `AC 3 TIER`) |
-| `[4]` | `sourse` | Origin / Starting Station |
-| `[5]` | `des` | Destination Station |
-| `[6]` | `fare` | Ticket Price (Integer) |
-
----
-
-## Functions Overview
-
-### 1. `data_enter(n)`
-Captures inputs for `n` passengers, builds individual passenger lists, and appends them to `main`.
-
-### 2. `search_data(ask)`
-Prompts for a Passenger ID and prints matching passenger details if found in `main`.
-
-### 3. `serch_data(askhighstfair)`
-Scans all entries to locate and display details for the passenger paying the highest fare value.
-
-### 4. `average_fair(avgfair)`
-Sums up ticket fares for all active records and prints the overall average fare.
-
-### 5. `my_ticket()`
-Renders styled, bordered Indian Railways E-Tickets in the terminal for every booked passenger.
-
-### 6. `cancelticket(z)`
-Removes a is  record matching PNR id /Passenger ID `z` from `main` and re-prints remaining valid tickets.
-
----
-
-## How to Run the code
-
-1. Copy the Python script into a file named `railway_booking.py`.
-2. Open terminal/command prompt in the directory containing the file.
-3. Run the application:
-
-```bash'''
-python railway_booking.py
+Sample E-Ticket Output
++========================================================================================+
+|                                INDIAN RAILWAYS E-TICKET                                |
++========================================================================================+
+| PNR NUMBER: 102938                            | BOOKING TIME: 2026-09-23 19:14:53     |
++========================================================================================+
+| TRAIN: 12424 - Rajdhani Express               | CLASS: AC 2 TIER                       |
+| FROM: New Delhi                               | TO:  Mumbai Central                    |
++========================================================================================+
+| PASSENGER DETAILS:                                                                     |
+| Name: Alex Vance                              | Age/Sex: Male                          |
++========================================================================================+
+| STATUS: CONFIRMED                                                                      |
+| COACH: A5           | SEAT: 5                             | PRICE : 3500       |
++========================================================================================+
+|                       *** WISHING YOU A SAFE AND HAPPY JOURNEY ***                      |
++========================================================================================+
